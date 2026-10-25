@@ -1,0 +1,400 @@
+/* Plain-CSS styling: no framework, one file, mobile-first responsive. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(180deg, #0b3d66 0%, #14639e 240px, #eef4f9 240px);
+  color: #1c2b36;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+header {
+  text-align: center;
+  color: #fff;
+  padding: 16px 0 28px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.byline {
+  margin: 4px 0;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.tagline {
+  margin: 8px auto 0;
+  max-width: 560px;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 18px rgba(11, 61, 102, 0.12);
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+
+/* --- search --- */
+.search-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.search-bar input {
+  flex: 1 1 220px;
+  padding: 12px 14px;
+  border: 1px solid #c6d4df;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #14639e;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: #0f5285;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+button.secondary {
+  background: #e8eff5;
+  color: #14639e;
+}
+
+button.secondary:hover:not(:disabled) {
+  background: #d7e4ee;
+}
+
+button.danger {
+  background: #fdecea;
+  color: #b3261e;
+}
+
+button.danger:hover:not(:disabled) {
+  background: #f9d7d3;
+}
+
+/* --- status messages --- */
+.error {
+  background: #fdecea;
+  color: #8c1d18;
+  border: 1px solid #f2b8b2;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 0;
+}
+
+.loading {
+  text-align: center;
+  color: #fff;
+  margin: 0;
+}
+
+/* --- current weather --- */
+.current-weather {
+  text-align: center;
+}
+
+.current-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.current-icon {
+  font-size: 3.4rem;
+}
+
+.current-temp {
+  font-size: 3.4rem;
+  font-weight: 700;
+}
+
+.condition {
+  font-size: 1.15rem;
+  margin: 4px 0 16px;
+}
+
+.current-details {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.current-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.current-details span {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #5b7183;
+}
+
+.observed {
+  color: #5b7183;
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+/* --- forecast --- */
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.forecast-day {
+  background: #f2f7fb;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.forecast-date {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.forecast-icon {
+  font-size: 2rem;
+  margin: 6px 0;
+}
+
+.forecast-condition {
+  font-size: 0.85rem;
+  min-height: 2.2em;
+}
+
+.forecast-rain {
+  font-size: 0.8rem;
+  color: #14639e;
+  margin-top: 4px;
+}
+
+/* --- location info --- */
+.wiki {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.wiki img {
+  width: 110px;
+  border-radius: 8px;
+}
+
+.wiki p {
+  margin: 0;
+}
+
+.map {
+  width: 100%;
+  height: 280px;
+  border: 1px solid #dbe5ec;
+  border-radius: 10px;
+  margin-top: 14px;
+}
+
+/* --- records --- */
+.hint {
+  color: #5b7183;
+  font-size: 0.9rem;
+}
+
+.record-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: end;
+  margin-bottom: 8px;
+}
+
+.record-form input[type="text"] {
+  flex: 1 1 160px;
+  padding: 10px 12px;
+  border: 1px solid #c6d4df;
+  border-radius: 8px;
+}
+
+.record-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  color: #5b7183;
+  gap: 4px;
+}
+
+.record-form input[type="date"] {
+  padding: 9px 10px;
+  border: 1px solid #c6d4df;
+  border-radius: 8px;
+}
+
+.export-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  border-top: 1px solid #e6edf2;
+  border-bottom: 1px solid #e6edf2;
+  margin: 12px 0;
+  font-size: 0.9rem;
+}
+
+.export-row a {
+  color: #14639e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.export-row a:hover {
+  text-decoration: underline;
+}
+
+.record-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.record-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: #f2f7fb;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.record-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.92rem;
+}
+
+.record-dates,
+.record-note {
+  color: #5b7183;
+}
+
+.record-actions,
+.record-edit {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.record-edit label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.78rem;
+  color: #5b7183;
+  gap: 3px;
+}
+
+.record-edit input {
+  padding: 8px 10px;
+  border: 1px solid #c6d4df;
+  border-radius: 8px;
+}
+
+.record-actions button,
+.record-edit button {
+  padding: 8px 14px;
+}
+
+/* --- footer --- */
+footer {
+  margin-top: 28px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 18px rgba(11, 61, 102, 0.12);
+  font-size: 0.92rem;
+}
+
+footer h4 {
+  margin-top: 0;
+}
+
+.footer-note {
+  color: #5b7183;
+  font-size: 0.85rem;
+}
+
+/* --- small screens --- */
+@media (max-width: 560px) {
+  .current-icon,
+  .current-temp {
+    font-size: 2.5rem;
+  }
+
+  .current-details {
+    gap: 18px;
+  }
+
+  .wiki {
+    flex-direction: column;
+  }
+
+  .wiki img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+  }
+
+  .record-item {
+    flex-direction: column;
+  }
+}
