@@ -137,5 +137,5 @@ frontend/
 
 ## Demo video
 
-_Demo video: [link to be added after recording — see REVIEW_GUIDE.md for a
-1–2 minute script.]_
+_Demo video (~2 minutes, walkthrough of both parts):
+https://drive.google.com/file/d/1IXAW40Og-hlGitEE2MyedghaZibBQ6U2/view?usp=drivesdk_
